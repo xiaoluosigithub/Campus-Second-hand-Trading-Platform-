@@ -10,9 +10,11 @@
           <el-input v-model="form.password" type="password" placeholder="请输入密码" />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" :loading="loading" @click="onSubmit">登录</el-button>
-          <el-button type="text" @click="goRegister">还没有账户？立即注册</el-button>
-          <el-button @click="goBack">返回</el-button>
+          <div class="actions">
+            <el-button type="primary" :loading="loading" @click="onSubmit">登录</el-button>
+            <el-button class="register-link" type="text" @click="goRegister">还没有账户？立即注册</el-button>
+            <el-button class="back-btn" @click="goBack">返回</el-button>
+          </div>
         </el-form-item>
       </el-form>
     </el-card>
@@ -66,4 +68,6 @@ async function onSubmit() {
 .wrap { display: flex; justify-content: center; padding: 40px 16px; }
 .card { width: 400px; }
 .title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+.actions { display: flex; align-items: center; width: 100%; }
+.back-btn { margin-left: auto; }
 </style>
